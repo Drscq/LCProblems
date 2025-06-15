@@ -39,9 +39,9 @@ You will get a Time Limit Exceeded (TLE) error for large inputs, so we need to o
 **Optimized Approach:** The brute force solution can be made significantly more efficient by avoiding the innermost loop entirely and counting valid $x_2$ values directly using interval bounds.
 
 We fix $x_1$ then compute the valid range of $x_2$ such that $x_3 = n - (x_1 + x_2)$ satisfies $0 <= x_3 <= limit$. This gives us a range for $x_2$:
-$$
+$
 0 \leq n - (x_1 + x_2) \leq limit \to n - x_1 - limit \leq x_2 \leq n - x_1
-$$
+$
 
 **Interset** this with the domain of $x_2 \in [0, limit]$, and count the number of integer $x_2$ values in that interval.
 
