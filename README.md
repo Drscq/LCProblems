@@ -9,4 +9,5 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [88-Merge-Sorted-Array](Meta/88%20Merge%20Sorted%20Array.md) | Two-pointers |
 | [125 Valid Palindrome](Meta/125%20Valid%20Palindrome.md) | Two-pointers |
 | [146 LRU Cache](Meta/146%20LRU%20Cache.md)| unordered_map, list |
+| [670 Maximum Swap](Meta/670%20Maximum%20Swap.md) | Greedy |
 
