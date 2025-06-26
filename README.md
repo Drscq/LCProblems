@@ -11,4 +11,5 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [146 LRU Cache](Meta/146%20LRU%20Cache.md)| unordered_map, list |
 | [670 Maximum Swap](Meta/670%20Maximum%20Swap.md) | Greedy |
 | [680 Valid Palindrome II](Meta/680%20Valid%20Palindrome%20II.md) | Two-pointers |
+| [408 Valid Word Abbreviation](Meta/408%20Valid%20Word%20Abbreviation.md) | Two-pointers |
 
