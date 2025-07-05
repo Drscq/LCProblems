@@ -13,4 +13,5 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [680 Valid Palindrome II](Meta/680%20Valid%20Palindrome%20II.md) | Two-pointers |
 | [408 Valid Word Abbreviation](Meta/408%20Valid%20Word%20Abbreviation.md) | Two-pointers |
 | [1 Two Sum](Meta/1%20Two%20Sum.md) | Hash Map |
+| [1570 Dot Product of Two Sparse Vectors](Meta/1570%20Dot%20Product%20of%20Two%20Sparse%20Vector.md) | Hash Map, List |
 
