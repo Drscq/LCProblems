@@ -15,4 +15,5 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [1 Two Sum](Meta/1%20Two%20Sum.md) | Hash Map |
 | [1570 Dot Product of Two Sparse Vectors](Meta/1570%20Dot%20Product%20of%20Two%20Sparse%20Vector.md) | Hash Map, List |
 | [215 Kth Largest Element in an Array](Meta/215%20Kth%20Largest%20Element%20in%20an%20Array.md) | Sorting, Min-Heap |
+| [236 Lowest Common Ancestor of a Binary Tree](Meta/236%20Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree.md) | Recursion |
 
