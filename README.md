@@ -17,5 +17,5 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [215 Kth Largest Element in an Array](Meta/215%20Kth%20Largest%20Element%20in%20an%20Array.md) | Sorting, Min-Heap |
 | [236 Lowest Common Ancestor of a Binary Tree](Meta/236%20Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree.md) | Recursion |
 | [938 Range Sum of BST](Meta/938%20Range%20Sum%20of%20BST.md) | Depth-First Search |
-| [1650 Lowest Common Ancestor of a Binary Tree III](Meta/1650%20Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20III.md) | Depth-First Search |
+| [1650 Lowest Common Ancestor of a Binary Tree III](Meta/1650%20Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20III.md) | Parent Pointer |
 
