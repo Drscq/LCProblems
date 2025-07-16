@@ -19,4 +19,5 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [938 Range Sum of BST](Meta/938%20Range%20Sum%20of%20BST.md) | Depth-First Search |
 | [1650 Lowest Common Ancestor of a Binary Tree III](Meta/1650%20Lowest%20Common%20Ancestor%20of%20a%20Binary%20Tree%20III.md) | Parent Pointer |
 | [314 Binary Tree Vertical Order Traversal](Meta/314%20Binary%20Tree%20Vertical%20Order%20Traversal.md) | Breadth First Search |
+| [1249 Minimum Remove to Make Valid Parentheses](Meta/1249%20Minimum%20Remove%20to%20Make%20Valid%20Parentheses.md) | Two Passes |
 
