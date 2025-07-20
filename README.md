@@ -22,4 +22,5 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [1249 Minimum Remove to Make Valid Parentheses](Meta/1249%20Minimum%20Remove%20to%20Make%20Valid%20Parentheses.md) | Two Passes |
 | [973 K Closest Points to Origin](Meta/973%20K%20Closest%20Points%20to%20Origin.md) | Sorting, Priority Queue |
 | [50 Pow(x, n)](Meta/50%20Pow_x_n.md) | Recursion, Binary Exponentiation |
+| [56 Merge Intervals](Meta/56%20Merge%20Intervals.md) | Sorting, Greedy |
 
