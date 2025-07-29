@@ -23,4 +23,5 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [973 K Closest Points to Origin](Meta/973%20K%20Closest%20Points%20to%20Origin.md) | Sorting, Priority Queue |
 | [50 Pow(x, n)](Meta/50%20Pow_x_n.md) | Recursion, Binary Exponentiation |
 | [56 Merge Intervals](Meta/56%20Merge%20Intervals.md) | Sorting, Greedy |
+| [34 Find First and Last Position of Element in Sorted Array](Meta/34%20Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array.md) | Binary Search |
 
