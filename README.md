@@ -25,3 +25,14 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [56 Merge Intervals](Meta/56%20Merge%20Intervals.md) | Sorting, Greedy |
 | [34 Find First and Last Position of Element in Sorted Array](Meta/34%20Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array.md) | Binary Search |
 
+
+# Google
+| Problem | Notes |
+|---------|-------|
+| [9 Palindrome Number](Google/9%20Palindrome%20Number.md) | Math, string handling |
+| [11 Container With Most Water](Google/11%20Container%20With%20Most%20Water.md) | Two-pointers |
+| [15 3Sum](Google/15%203Sum.md) | hash, sorting |
+| [20 Valid Parentheses](Google/20%20Valid%20Parentheses.md) | Stack |
+| [42 Trapping Rain Water](Google/42%20Trapping%20Rain%20water.md) | Two-pointers, monotonic stack |
+| [1768 Merge Strings Alternately](Google/1768%20Merge%20Strings%20Alternately.md) | Two-pointers |
+
