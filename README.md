@@ -29,10 +29,18 @@ This repository records all the LeetCode Problems I prepared for internship.
 # Google
 | Problem | Notes |
 |---------|-------|
+| [5 Longest Palindromic Substring](Google/5%20Longest%20Palindromic%20Substring.md) | Expand-around-center, DP |
 | [9 Palindrome Number](Google/9%20Palindrome%20Number.md) | Math, string handling |
 | [11 Container With Most Water](Google/11%20Container%20With%20Most%20Water.md) | Two-pointers |
 | [15 3Sum](Google/15%203Sum.md) | hash, sorting |
 | [20 Valid Parentheses](Google/20%20Valid%20Parentheses.md) | Stack |
+| [26 Remove Duplicates from Sorted Array](Google/26%20Remove%20Duplicates%20from%20Sorted%20Array.md) | Two-pointers |
 | [42 Trapping Rain Water](Google/42%20Trapping%20Rain%20water.md) | Two-pointers, monotonic stack |
+| [48 Rotate Image](Google/48%20Rotate%20Image.md) | Matrix rotation, in-place |
+| [121 Best Time to Buy and Sell Stock](Google/121%20Best%20Time%20to%20Buy%20and%20Sell%20Stock.md) | One-pass, greedy |
+| [189 Rotate Array](Google/189%20Rotate%20Array.md) | Reverse, cycle replacement |
+| [202 Happy Number](Google/202%20Happy%20Number.md) | Hash set, Floyd cycle detection |
+| [283 Move Zeros](Google/283%20Move%20Zeros.md) | Two-pointers, in-place |
+| [912 Sort an Array](Google/912%20Sort%20an%20Array.md) | Merge sort, quicksort |
 | [1768 Merge Strings Alternately](Google/1768%20Merge%20Strings%20Alternately.md) | Two-pointers |
 
