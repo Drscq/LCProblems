@@ -1,0 +1,111 @@
+# 31 Next Permutation
+
+A permutation of an array of integers is an arrangement of its members into a sequence or linear order.
+
+* For example, for `arr = [1, 2, 3]`, the following are all the permutations of `arr`: `[1, 2, 3]`, `[1, 3, 2]`, `[2, 1, 3]`, `[2, 3, 1]`, `[3, 1, 2]`, and `[3, 2, 1]`.
+
+The next permutation of an array of integers is the next lexicographically greater permutation of its integer. More formally, if all the permutations of the array are sorted in one container according to their lexicographical order, then the next permutation of that array is the permutation that follows it in the sorted container. If such arrangement is not possible, the array must be rearranged as the lowest possible order (i.e., sorted in ascending order).
+
+* For example, the next permutation of `arr = [1, 2, 3]` is `[1, 3, 2]`.
+* Similarly, the next permutation of `arr = [2, 3, 1]` is `[3, 1, 2]`.
+* While the next permutation of `arr = [3, 2, 1]` is `[1, 2, 3]` because `[3, 2, 1]` does not have a lexicographically greater rearrangement.
+
+Given an array of integers `nums`, find the next permutation of `nums`.
+The replacement must be **in place** and use only constant extra memory.
+
+## Examples
+
+**Example 1:**
+
+```
+Input: nums = [1,2,3]
+Output: [1,3,2]
+```
+**Example 2:**
+
+```
+Input: nums = [3,2,1]
+Output: [1,2,3]
+```
+**Example 3:**
+```
+Input: nums = [1,1,5]
+Output: [1,5,1] 
+```
+
+## Constraints
+* `1 <= nums.length <= 100`
+* `0 <= nums[i] <= 100`
+
+## Solutions
+
+### Approach 1: Brute Force (Generate All Permutations)
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> res;
+    void nextPermutation(vector<int>& nums) {
+        // Generate all in lexicographical order
+        vector<int> nums_sorted = nums;
+        sort(nums_sorted.begin(), nums_sorted.end());
+
+        res.clear();
+        vector<int> cur;
+        vector<int> used(nums_sorted.size(), 0);
+        backTracking(nums_sorted, used, cur);
+
+        // Find current and set to next (wrap to first if at last)
+        int n = (int)res.size();
+        for (int i = 0; i < n; ++i) {
+            if (res[i] == nums) {
+                nums = res[(i + 1) % n];
+                return;
+            }
+        }
+
+        // if not found, should not happen, default to first
+        nums = res[0];
+    }
+
+    void backTracking(vector<int>& nums_sorted, vector<int>& used, vector<int>& cur) {
+        int n = (int)nums_sorted.size();
+        if ((int)cur.size() == n) {
+            res.push_back(cur);
+            return;
+        }
+        for (int i = 0; i < n; ++i) {
+            if (used[i]) continue;
+            used[i] = 1;
+            cur.push_back(nums_sorted[i]);
+            backTracking(nums_sorted, used, cur);
+            cur.pop_back();
+            used[i] = 0;
+        }
+    }
+};
+```
+
+### Approach 2: Find the First Decreasing Element from the Right
+
+```cpp
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        int n = nums.size();
+        if (n <= 1) return;
+        int i = n - 2;
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
+            --i;
+        }
+        if (i >= 0) {
+            int j = n - 1;
+            while (j > i && nums[j] <= nums[i]) {
+                --j;
+            }
+            swap(nums[i], nums[j]);
+        }
+        reverse(nums.begin() + i + 1, nums.end());
+    }
+};
+```
