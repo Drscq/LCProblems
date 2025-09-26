@@ -87,7 +87,7 @@ Let's use a table `dp` with dimension of $n \times n$. `dp[i][j]` is a boolean r
 
 Now we need to populate the table. We iterate over all $i, j$ pairs, starting with pairs that have a difference of $2$ (length $3$ substrings), then pairs with a difference of $3$ (length $4$ substrings), and so on. For each pair, we check the condition from earlier
 $$
-s[i] == s[j] \text{ && } dp[i + 1][j - 1]
+s[i] == s[j] \text{ \&\& } dp[i + 1][j - 1]
 $$
 If this is true, we set `dp[i][j] = true`. If the length of this palindrome is longer than the longest one we've seen so far, we update our answer.
 
