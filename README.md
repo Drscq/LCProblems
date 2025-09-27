@@ -41,8 +41,10 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [27 Remove Element](Google/27%20Remove%20Element.md) | Two-pointers |
 | [28 Find the index of the First Occurrence in a String](Google/28%20Find%20the%20index%20of%20the%20First%20Occurrence%20in%20a%20String.md) | String matching, KMP |
 | [31 Next Permutation](Google/31%20Next%20Permutation.md) | Array, reverse suffix |
+| [37 Sudoku Solver](Google/37%20Sudoku%20Solver.md) | Backtracking |
 | [42 Trapping Rain Water](Google/42%20Trapping%20Rain%20water.md) | Two-pointers, monotonic stack |
 | [48 Rotate Image](Google/48%20Rotate%20Image.md) | Matrix rotation, in-place |
+| [49 Group Anagrams](Google/49%20Group%20Anagrams.md) | Hash map, sorting |
 | [51 N-Queens](Google/51%20N-Queens.md) | Backtracking |
 | [53 Maximum Subarray](Google/53%20Maximum%20Subarray.md) | Kadane's algorithm, divide and conquer |
 | [54 Spiral Matrix](Google/54%20Spiral%20Matrix.md) | Simulation, boundaries |
@@ -54,10 +56,12 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [169 Majority Element](Google/169%20Majority%20Element.md) | Hash map, Boyer-Moore voting |
 | [175 Combine Two Tables](Google/175%20Combine%20Two%20Tables.md) | SQL JOIN |
 | [189 Rotate Array](Google/189%20Rotate%20Array.md) | Reverse, cycle replacement |
+| [198 House Robber](Google/198%20House%20Robber.md) | Dynamic Programming |
 | [202 Happy Number](Google/202%20Happy%20Number.md) | Hash set, Floyd cycle detection |
 | [206 Reverse Linked List](Google/206%20Reverse%20Linked%20List.md) | Iterative, recursive |
 | [231 Power of Two](Google/231%20Power%20of%20Two.md) | Bit manipulation |
 | [283 Move Zeros](Google/283%20Move%20Zeros.md) | Two-pointers, in-place |
+| [349 Intersection of Two Arrays](Google/349%20Intersection%20of%20Two%20Arrays.md) | Hash set |
 | [394 Decode String](Google/394%20Decode%20String.md) | Stack, recursion |
 | [410 Split Array Largest Sum](Google/410%20Split%20Array%20Largest%20Sum.md) | Binary search, greedy |
 | [560 Subarray Sum Equals K](Google/560%20Subarray%20Sum%20Equals%20K.md) | Prefix sum, hash map |
