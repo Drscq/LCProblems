@@ -55,4 +55,31 @@ public:
 ```
 ### Approach: Deque
 
-TODO next time.
+```cpp
+class Solution {
+public:
+    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        int n = nums.size();
+        if (k == 1 || n == 0) return nums;
+        if (k >= n) return { *max_element(nums.begin(), nums.end()) };
+
+        deque<int> dq;              // store indices, values decreasing
+        vector<int> ans;
+        ans.reserve(n - k + 1);
+
+        for (int i = 0; i < n; ++i) {
+            // 1) pop indices that fell out of the window [i-k+1, i]
+            if (!dq.empty() && dq.front() <= i - k) dq.pop_front();
+
+            // 2) maintain decreasing order: remove smaller/equal from back
+            while (!dq.empty() && nums[dq.back()] <= nums[i]) dq.pop_back();
+
+            dq.push_back(i);
+
+            // 3) window formed, front is the max
+            if (i >= k - 1) ans.push_back(nums[dq.front()]);
+        }
+        return ans;
+    }
+};
+```
