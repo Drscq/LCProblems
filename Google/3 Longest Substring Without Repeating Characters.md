@@ -52,3 +52,28 @@ public:
     }
 };
 ```
+
+```c++
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int n = s.size();
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        int start = 0;
+        unordered_map<char, int> last;
+        int ans = 1;
+        int len = 0;
+        for (int end = 0; end < n; ++end) {
+            char c = s[end];
+            if (last.count(c) && last[c] >= start) {
+                ans = max(ans, end - start);
+                start = last[c] + 1;
+            }
+            last[c] = end;
+            len = end - start + 1;
+        }
+        return max(ans, len);
+    }
+};
+```
