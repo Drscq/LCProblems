@@ -29,6 +29,7 @@ This repository records all the LeetCode Problems I prepared for internship.
 # Google
 | Problem | Notes |
 |---------|-------|
+| [3 Longest Substring Without Repeating Characters](Google/3%20Longest%20Substring%20Without%20Repeating%20Characters.md) | Sliding window, hash map |
 | [5 Longest Palindromic Substring](Google/5%20Longest%20Palindromic%20Substring.md) | Expand-around-center, DP |
 | [9 Palindrome Number](Google/9%20Palindrome%20Number.md) | Math, string handling |
 | [10 Regular Expression Matching](Google/10%20Regular%20Expression%20Matching.md) | Dynamic Programming |
@@ -41,15 +42,20 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [27 Remove Element](Google/27%20Remove%20Element.md) | Two-pointers |
 | [28 Find the index of the First Occurrence in a String](Google/28%20Find%20the%20index%20of%20the%20First%20Occurrence%20in%20a%20String.md) | String matching, KMP |
 | [31 Next Permutation](Google/31%20Next%20Permutation.md) | Array, reverse suffix |
-| [37 Sudoku Solver](Google/37%20Sudoku%20Solver.md) | Backtracking |
+| [33 Search in Rotated Sorted Array](Google/33%20Search%20in%20Rotated%20Sorted%20Array.md) | Modified binary search |
+| [37 Sudoku Solver](Google/37%20Sudoku%20Solver.md) | Backtracking, constraint checking |
 | [42 Trapping Rain Water](Google/42%20Trapping%20Rain%20water.md) | Two-pointers, monotonic stack |
+| [44 Wildcard Matching](Google/44%20Wildcard%20Matching.md) | Dynamic Programming |
+| [45 Jump Game II](Google/45%20Jump%20Game%20II.md) | Greedy |
 | [48 Rotate Image](Google/48%20Rotate%20Image.md) | Matrix rotation, in-place |
-| [49 Group Anagrams](Google/49%20Group%20Anagrams.md) | Hash map, sorting |
+| [49 Group Anagrams](Google/49%20Group%20Anagrams.md) | Sorting, hash map |
 | [51 N-Queens](Google/51%20N-Queens.md) | Backtracking |
 | [53 Maximum Subarray](Google/53%20Maximum%20Subarray.md) | Kadane's algorithm, divide and conquer |
 | [54 Spiral Matrix](Google/54%20Spiral%20Matrix.md) | Simulation, boundaries |
+| [66 Plus One](Google/66%20Plus%20One.md) | Array manipulation, carry |
 | [67 Add Binary](Google/67%20Add%20Binary.md) | String manipulation, carry |
 | [75 Sort Colors](Google/75%20Sort%20Colors.md) | Dutch National Flag, two-pointers |
+| [92 Reverse Linked List II](Google/92%20Reverse%20Linked%20List%20II.md) | Linked list, in-place reversal |
 | [121 Best Time to Buy and Sell Stock](Google/121%20Best%20Time%20to%20Buy%20and%20Sell%20Stock.md) | One-pass, greedy |
 | [128 Longest Consecutive Sequence](Google/128%20Longest%20Consecutive%20Sequence.md) | Hash set |
 | [152 Maximum Product Subarray](Google/152%20Maximum%20Product%20Subarray.md) | Dynamic Programming |
@@ -60,11 +66,15 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [202 Happy Number](Google/202%20Happy%20Number.md) | Hash set, Floyd cycle detection |
 | [206 Reverse Linked List](Google/206%20Reverse%20Linked%20List.md) | Iterative, recursive |
 | [231 Power of Two](Google/231%20Power%20of%20Two.md) | Bit manipulation |
+| [239 Sliding Window Maximum](Google/239%20Sliding%20Window%20Maximum.md) | Monotonic deque, sliding window |
 | [283 Move Zeros](Google/283%20Move%20Zeros.md) | Two-pointers, in-place |
 | [349 Intersection of Two Arrays](Google/349%20Intersection%20of%20Two%20Arrays.md) | Hash set |
 | [394 Decode String](Google/394%20Decode%20String.md) | Stack, recursion |
 | [410 Split Array Largest Sum](Google/410%20Split%20Array%20Largest%20Sum.md) | Binary search, greedy |
 | [560 Subarray Sum Equals K](Google/560%20Subarray%20Sum%20Equals%20K.md) | Prefix sum, hash map |
+| [584 Find Customer Referee](Google/584%20Find%20Customer%20Referee.md) | SQL filtering, NULL handling |
+| [643 Maximum Average Subarray I](Google/643%20Maximum%20Average%20Subarray%20I.md) | Sliding window |
 | [912 Sort an Array](Google/912%20Sort%20an%20Array.md) | Merge sort, quicksort |
 | [1768 Merge Strings Alternately](Google/1768%20Merge%20Strings%20Alternately.md) | Two-pointers |
+| [2667 Create Hello World Function](Google/2667%20Create%20Hello%20World%20Function.md) | Closure, higher-order function |
 
