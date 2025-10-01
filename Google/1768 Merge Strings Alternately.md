@@ -52,6 +52,9 @@ public:
     }
 };
 ```
+**Complexity Analysis:**
+- Time complexity: $O(m + n)$, where `m` and `n` are the lengths of `word1` and `word2`, respectively.
+- Space complexity: $O(m + n)$, the space used to store the answer.
 
 ### one pointer with traversaling max length and checking bounds
 ```cpp
