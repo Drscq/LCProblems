@@ -46,3 +46,8 @@ public:
     }
 };
 ```
+
+## Complexity Analysis:
+- Time Complexity: O(d), where d is the number of digits in the integer x.
+- Space Complexity: O(d), where d is the number of digits in the integer x, since we store the digits in a vector.
+
