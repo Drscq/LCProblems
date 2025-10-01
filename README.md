@@ -29,12 +29,14 @@ This repository records all the LeetCode Problems I prepared for internship.
 # Google
 | Problem | Notes |
 |---------|-------|
+| [1 Two Sum](Google/1%20Two%20Sum.md) | Hash map |
 | [3 Longest Substring Without Repeating Characters](Google/3%20Longest%20Substring%20Without%20Repeating%20Characters.md) | Sliding window, hash map |
 | [5 Longest Palindromic Substring](Google/5%20Longest%20Palindromic%20Substring.md) | Expand-around-center, DP |
 | [9 Palindrome Number](Google/9%20Palindrome%20Number.md) | Math, string handling |
 | [10 Regular Expression Matching](Google/10%20Regular%20Expression%20Matching.md) | Dynamic Programming |
 | [11 Container With Most Water](Google/11%20Container%20With%20Most%20Water.md) | Two-pointers |
 | [15 3Sum](Google/15%203Sum.md) | hash, sorting |
+| [16 3Sum Closest](Google/16%203Sum%20Closest.md) | Sorting, two-pointers |
 | [18 4Sum](Google/18%204Sum.md) | Hash, sorting, two-pointers |
 | [20 Valid Parentheses](Google/20%20Valid%20Parentheses.md) | Stack |
 | [22 Generate Parentheses](Google/22%20Generate%20Parentheses.md) | Backtracking |
@@ -74,6 +76,8 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [560 Subarray Sum Equals K](Google/560%20Subarray%20Sum%20Equals%20K.md) | Prefix sum, hash map |
 | [584 Find Customer Referee](Google/584%20Find%20Customer%20Referee.md) | SQL filtering, NULL handling |
 | [643 Maximum Average Subarray I](Google/643%20Maximum%20Average%20Subarray%20I.md) | Sliding window |
+| [796 Rotate String](Google/796%20Rotate%20String.md) | String manipulation, rotation check |
+| [875 Koko Eating Bananas](Google/875%20Koko%20Eating%20Bananas.md) | Binary search |
 | [912 Sort an Array](Google/912%20Sort%20an%20Array.md) | Merge sort, quicksort |
 | [1768 Merge Strings Alternately](Google/1768%20Merge%20Strings%20Alternately.md) | Two-pointers |
 | [2667 Create Hello World Function](Google/2667%20Create%20Hello%20World%20Function.md) | Closure, higher-order function |
