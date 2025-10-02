@@ -105,3 +105,7 @@ public:
     }
 };
 ```
+
+**Complexity Analysis:**
+- Time Complexity: O(n), where n is the number of elements in the input array height
+- Space Complexity: O(n), the space used to store the prefix and suffix maximum heights.
