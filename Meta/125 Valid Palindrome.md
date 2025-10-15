@@ -62,6 +62,23 @@ public:
 }
 ```
 
+```c++
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        string filtered_str = "";
+        for (char c : s) {
+            if (isalnum(c)) {
+                filtered_str += tolower(c);
+            }
+        }
+        string reversed_str = filtered_str;
+        reverse(reversed_str.begin(), reversed_str.end());
+        return filtered_str == reversed_str;
+    }
+};
+```
+
 ### Complexity Analysis
 * Time complexity: $O(n)$ in length $n$ of the string.
 
