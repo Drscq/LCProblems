@@ -127,3 +127,31 @@ class Solution:
 
 - **Time Complexity**: $O(\log n)$, where $n$ is the length of the `nums` array. We reduce the search space by half at every step.
 - **Space Complexity**: $O(1)$, as we are using a constant amount of space for the variables.
+
+**The C++ Version:**
+
+```cpp
+class Solution {
+public:
+    int findPeakElement(vector<int>& nums) {
+        int n = nums.size();
+        if (n == 1) return 0;
+        int start = 0, end = n - 1;
+        while (start <= end) {
+            int middle = start + (end - start) / 2;
+            if (middle > 0 && middle < n - 1 && nums[middle] > nums[middle - 1] && nums[middle] > nums[middle + 1]) {
+                return middle;
+            } else if (middle == 0 && nums[middle] > nums[middle + 1]) {
+                return middle;
+            } else if (middle == n - 1 && nums[middle] > nums[middle - 1]) {
+                return middle;
+            } else if (middle < n - 1 && nums[middle] < nums[middle + 1]) {
+                start = middle + 1;
+            } else {
+                end = middle - 1;
+            }
+        }
+        return -1; // This line should never be reached if input is valid
+    }
+};
+```
