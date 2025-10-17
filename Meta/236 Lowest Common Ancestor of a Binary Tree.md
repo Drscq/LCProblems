@@ -112,6 +112,30 @@ class Solution:
         return self.ans
 ```
 
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *    int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if (root == nullptr) return root;
+        if (root == p || root == q) return root;
+        TreeNode* left = lowestCommonAncestor(root->left, p, q);
+        TreeNode* right = lowestCommonAncestor(root->right, p, q);
+        if (left != nullptr && right != nullptr) return root;
+        return left != nullptr ? left : right;
+    }
+};
+```
+
+
 ## Complexity Analysis
 
 * Time Complexity: $O(N)$, where $N$ is the number of nodes in the binary tree. In the worst case, we might be visiting all the nodes of the binary tree.
