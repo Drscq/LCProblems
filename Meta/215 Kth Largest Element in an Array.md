@@ -115,3 +115,21 @@ We iterate $n$ times, performing up to $\log k$ work at each iteration, giving u
 Because $k \leq n$, this is an improvement on the previous approach.
 
 * Space Complexity: $O(k)$: The heap will contain at most $k$ elements at any time.
+
+### C++ Implementation
+
+```cpp
+class Solution {
+public:
+    int findKthLargest(vector<int>& nums, int k) {
+        priority_queue<int> minHeap;
+        for (int num : nums) {
+            minHeap.push(-num); 
+            if (minHeap.size() > k) {
+                minHeap.pop();
+            }
+        }
+        return -minHeap.top();
+    }
+};
+```
