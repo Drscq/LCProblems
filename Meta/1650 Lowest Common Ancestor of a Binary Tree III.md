@@ -91,6 +91,37 @@ class Solution:
             node_t = node_t.parent
 ```
 
+```cpp
+/**
+* Definition for a Node.
+* class Node {
+* public:
+*     int val;
+*     Node* left;
+*     Node* right;
+*     Node* parent;
+*}
+*/
+class Solution {
+public:
+    Node* lowestCommonAncestor(Node* p, Node* q) {
+        unordered_set<Node*> path_p;
+        Node* node_t = p;
+        while (node_t) {
+            path_p.insert(node_t);
+            node_t = node_t->parent;
+        }
+        node_t = q;
+        while (node_t) {
+            if (path_p.count(node_t)) {
+                return node_t;
+            }
+            node_t = node_t->parent;
+        }
+        return nullptr;
+    }
+};
+```
 ### Complexity Analysis
 - **Time Complexity**: O(h), where h is the height of the tree. In the worst case, we may need to traverse up to the root from both nodes.
 - **Space Complexity**: O(h) for storing the path from node `p` to the root in `path_p`.
