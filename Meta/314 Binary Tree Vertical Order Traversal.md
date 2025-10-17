@@ -90,7 +90,7 @@ We elaborate on the steps to implement the above idea.
 - We then sort the hash table by its keys, i.e., `column` index in ascending order. And finally, we return the results column by column.
 
 
-```
+```python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -113,6 +113,45 @@ class Solution:
                 queue.append((node.right, column + 1))
         return [columnTable[x] for x in sorted(columnTable.keys())]
 ```
+
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *    int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    vector<vector<int>> verticalOrder(TreeNode* root) {
+        map<int, vector<int>> columnTable;
+        bfs(root, columnTable);
+        vector<vector<int>> result;
+        for (auto& [_, columnValues] : columnTable) {
+            result.emplace_back(columnValues);
+        }
+        return result;
+    }
+    void bfs(TreeNode* root, map<int, vector<int>>& columnTable) {
+        queue<pair<TreeNode*, int>> que;
+        que.push({root, 0});
+        while (!que.empty()) {
+            auto [node, column] = que.front();
+            que.pop();
+            if (node != nullptr) {
+                columnTable[column].emplace_back(node->val);
+                que.push({node->left, column - 1});
+                que.push({node->right, column + 1});
+            }
+        }
+    }
+};
+ ```
 
 ## Complexity Analysis
 
