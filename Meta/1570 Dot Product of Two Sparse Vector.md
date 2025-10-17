@@ -56,13 +56,33 @@ class SparseVector:
         for i in range(len(vec.nums)):
             total += self.nums[i] * vec.nums[i]
         return total
-
-        
+      
 
 # Your SparseVector object will be instantiated and called as such:
 # v1 = SparseVector(nums1)
 # v2 = SparseVector(nums2)
 # ans = v1.dotProduct(v2)
+```
+
+```cpp
+class SparseVector {
+public:
+    SparseVector(vector<int>& nums) {
+        m_nums = nums;
+        m_size = nums.size();
+    }
+
+    int dotProduct(SparseVector& vec) {
+        int total = 0;
+        for (int i = 0; i < m_size; ++i) {
+            total += m_nums[i] * vec.m_nums[i];
+        }
+        return total;
+    }
+private:
+    vector<int> m_nums;
+    int m_size;
+};
 ```
 
 ### Optimized Approach
@@ -90,4 +110,28 @@ class SparseVector:
 # v1 = SparseVector(nums1)
 # v2 = SparseVector(nums2)
 # ans = v1.dotProduct(v2)
+```
+
+```cpp
+class SparseVector {
+public:
+    SparseVector(vector<int>& nums) {
+        for (int i = 0; i < nums.size(); ++i) {
+            if (nums[i] != 0) {
+                m_dic[i] = nums[i];
+            }
+        }
+    }
+    int dotProduct(SparseVector& vec) {
+        int total = 0;
+        for (const auto& [key, value] : vec.m_dic) {
+            if (m_dic.find(key) != m_dic.end()) {
+                total += value * m_dic[key];
+            }
+        }
+        return total;
+    }
+private:
+    unordered_map<int, int> m_dic;
+};
 ```
