@@ -72,3 +72,75 @@ class Solution:
         
         return "".join(reversed(right_to_left_res))
 ```
+
+```cpp
+class Solution {
+public:
+    string minRemoveToMakeValid(string s) {
+        unordered_set<int> indexedToBeRemoved;
+        int count = 0;
+        // Pass 1: Left to Right to mark unmatched ')'
+        for (int i = 0; i < s.size(); ++i) {
+            if (s[i] == '(') {
+                ++count;
+            } else if (s[i] == ')') {
+                if (count > 0) {
+                    --count;
+                } else {
+                    indexedToBeRemoved.insert(i);
+                }
+            }
+        }
+        // Pass 2: Right to Left to remove the leftover unmatched '('
+        for (int i = s.size() - 1; i >= 0 && count > 0; --i) {
+            if (s[i] == '(') {
+                indexedToBeRemoved.insert(i);
+                --count;
+            }
+        }
+        string result;
+        for (int i = 0; i < s.size(); ++i) {
+            if (indexedToBeRemoved.count(i) == 0) {
+                result += s[i];
+            }
+        }
+        return result;
+    }
+};
+```
+
+### Approach 2 : Single Pass with Stack
+
+```cpp
+class Solution {
+public:
+    string minRemoveToMakeValid(string s) {
+        stack<int> openParenIndices;
+        unordered_set<int> indicesToBeRemoved;
+        for (int i = 0; i < s.size(); ++i) {
+            if (s[i] == '(') {
+                openParenIndices.push(i);
+            } else if (s[i] == ')') {
+                if (!openParenIndices.empty()) {
+                    openParenIndices.pop();
+                } else {
+                    indicesToBeRemoved.insert(i);
+                }
+            }
+        }
+        while (!openParenIndices.empty()) {
+            indicesToBeRemoved.insert(openParenIndices.top());
+            openParenIndices.pop();
+        }
+        string result;
+        for (int i = 0; i < s.size(); ++i) {
+            if (indicesToBeRemoved.count(i) == 0) {
+                result += s[i];
+            }
+        }
+        return result;
+    }
+};
+```
+
+
