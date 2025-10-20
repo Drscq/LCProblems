@@ -109,3 +109,33 @@ class Solution:
 
 - **Space Complexity**: $O(N)$, 
     - Fort he recurisve and iterative implementations, we are performing a DSF (depth-First-Search) traversal. The recursive solution requires additional space to maintain the function call stack while the iterative solution requires additional space to maintain the stak. In both implementations, the worst case scenario occurs whent he tree is of chain shape, and we will reach all the way down to the leaf node. In this case, the space required for the stack is $O(N)$.
+
+---
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *    int val;
+ *    TreeNode *left;
+ *    TreeNode *right;
+ *    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int rangeSumBST(TreeNode* root, int low, int high) {
+        if (root == nullptr) {
+            return 0;
+        }
+        int leftSum = rangeSumBST(root->left, low, high);
+        int rightSum = rangeSumBST(root->right, low, high);
+        int sum = leftSum + rightSum;
+        if (root->val >= low && root->val <= high) {
+            sum += root->val;
+        }
+        return sum;
+    }
+};
+```
