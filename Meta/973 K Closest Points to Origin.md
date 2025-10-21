@@ -55,3 +55,57 @@ class Solution:
         return res
 ```
 
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
+        priority_queue<pair<int, vector<int>>> maxHeap;
+        for (const auto& point : points) {
+            int x = point[0];
+            int y = point[1];
+            int distance = x * x + y * y;
+            maxHeap.push({distance, point});
+            if (maxHeap.size() > k) {
+                maxHeap.pop();
+            }
+        }
+        vector<vector<int>> res;
+        while (!maxHeap.empty()) {
+            res.push_back(maxHeap.top().second);
+            maxHeap.pop();
+        }
+        return res;
+    }
+};
+```     
+
+**Just collecting the index in the heap instead of the vector**
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
+        priority_queue<pair<int, int>> maxHeap;
+        for (int i = 0; i < points.size(); ++i) {
+            int x = points[i][0];
+            int y = points[i][1];
+            int distance = x * x + y * y;
+            maxHeap.push({distance, i});
+            if (maxHeap.size() > k) {
+                maxHeap.pop();
+            }
+        }
+        vector<vector<int>> res;
+        while (!maxHeap.empty()) {
+            res.push_back(points[maxHeap.top().second]);
+            maxHeap.pop();
+        }
+        return res;
+    }
+};
+```
+
+#### Complexity Analysis
+* Time complexity: O(N log k), where N is the number of points. We iterate through all points, and each insertion and removal operation on the heap takes O(log k) time.
+* Space complexity: O(k), the size of the heap.
