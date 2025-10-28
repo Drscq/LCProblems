@@ -23,13 +23,13 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [314 Binary Tree Vertical Order Traversal](Meta/314%20Binary%20Tree%20Vertical%20Order%20Traversal.md) | Breadth First Search |
 | [339 Nested List Weight Sum](Meta/339%20Nested%20List%20Weight%20Sum.md) | Depth-First Search |
 | [347 Top K Frequent Elements](Meta/347%20Top%20K%20Frequent%20Elements.md) | Heap, Hash Map |
-| [408 Valid Word Abbreviation](Meta/408%20Valid%20Word%20Abbreviation.md) | Two-pointers |
+| [408 Valid Word Abbreviation ⭐](Meta/408%20Valid%20Word%20Abbreviation.md) | Two-pointers |
 | [528 Random Pick with Weight](Meta/528%20Random%20Pick%20with%20Weight.md) | Prefix Sum, Binary Search |
 | [543 Diameter of Binary Tree](Meta/543%20Diameter%20of%20Binary%20Tree.md) | Recursion |
 | [560 Subarray Sum Equals K](Meta/560%20Subarray%20Sum%20Equals%20K.md) | Prefix Sum, Hash Map |
 | [670 Maximum Swap](Meta/670%20Maximum%20Swap.md) | Greedy |
 | [680 Valid Palindrome II](Meta/680%20Valid%20Palindrome%20II.md) | Two-pointers |
-| [791 Custom Sort String](Meta/791%20Custom%20Sort%20String.md) | Counting Sort, Hash Map |
+| [791 Custom Sort String ⭐](Meta/791%20Custom%20Sort%20String.md) | Counting Sort, Hash Map |
 | [938 Range Sum of BST](Meta/938%20Range%20Sum%20of%20BST.md) | Depth-First Search |
 | [973 K Closest Points to Origin](Meta/973%20K%20Closest%20Points%20to%20Origin.md) | Sorting, Priority Queue |
 | [1091 Shortest Path in Binary Matrix](Meta/1091%20Shortest%20Path%20in%20Binary%20Matrix.md) | Breadth-First Search |
