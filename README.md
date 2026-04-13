@@ -97,3 +97,9 @@ This repository records all the LeetCode Problems I prepared for internship.
 | [1768 Merge Strings Alternately](Google/1768%20Merge%20Strings%20Alternately.md) | Two-pointers |
 | [2667 Create Hello World Function](Google/2667%20Create%20Hello%20World%20Function.md) | Closure, higher-order function |
 
+
+# Uber
+| Problem | Notes |
+|---------|-------|
+| [2791 Count Paths That Can Form a Palindrome in a Tree](Uber/2791%20Count%20Paths%20That%20Can%20Form%20a%20Palindrome%20in%20a%20Tree.md) | Tree DFS, bitmask parity, prefix XOR |
+| [2858 Minimum Edge Reversals So Every Node is Reachable](Uber/2858%20Minimum%20Edge%20Reversals%20So%20Every%20Node%20is%20Reachable.md) | Rerooting DP, tree DP, DFS |
