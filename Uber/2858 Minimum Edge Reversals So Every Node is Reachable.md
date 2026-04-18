@@ -141,3 +141,47 @@ public:
 - Space Complexity: $O(n)$ for the adjacency list and DP arrays.
 
 The key mental model is `dp[node]` tells you the cost from a fixed root downward; rerooting propagates how that cost shifts as you slide the "root" across each edge.
+
+
+#### Modulization Version
+
+```c++
+class Solution {
+public:
+    vector<int> minEdgeReversals(int n, vector<vector<int>>& edges) {
+        // adjacency list with edge costs
+        vector<vector<pair<int, int>>> adj = buildGraph(n, edges);
+        // First DFS to get the min reversals from root
+        vector<int> dp(n, 0);
+        dfs1(0, -1, adj, dp);
+        // Second DFS to reroot and get answers for all nodes
+        vector<int> answer(n, 0);
+        answer[0] = dp[0];
+        dfs2(0, -1, adj, answer);
+        return answer;
+    }
+    vector<vector<pair<int, int>>> buildGraph(int n, vector<vector<int>>& edges) {
+        vector<vector<pair<int, int>>> adj(n);
+        for (auto& e : edges) {
+            adj[e[0]].emplace_back(e[1], 0);
+            adj[e[1]].emplace_back(e[0], 1);
+        }
+        return adj;
+    }
+    void dfs1(int node, int par, vector<vector<pair<int, int>>>& adj, vector<int>& dp) {
+        for (auto& [next, cost] : adj[node]) {
+            if (next == par) continue;
+            dfs1(next, node, adj, dp);
+            dp[node] += dp[next] + cost;
+        }
+    }
+
+    void dfs2(int node, int par, vector<vector<pair<int, int>>>& adj, vector<int>& answer) {
+        for (auto& [next, cost] : adj[node]) {
+            if (next == par) continue;
+            answer[next] = answer[node] + (cost == 0 ? 1 : -1);
+            dfs2(next, node, adj, answer);
+        }
+    }
+};
+```
