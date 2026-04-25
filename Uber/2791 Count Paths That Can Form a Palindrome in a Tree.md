@@ -100,3 +100,55 @@ public:
     }
 };
 ```
+
+
+### Complexity Analysis
+* Time Complexity: O(n * 26) = O(n), since each node is processed once and we check 26 bits for each node.
+* Space Complexity: O(n) for the tree representation and the frequency map in the worst case.
+
+
+## Modularization Manner Solution
+
+### Core Insight: XOR Bitmask
+A string can be rearranged into a palindrome if at most one character has an odd frequency. You can represent each path's character frequencies as a 26-bit bit mask (bit `i` = parity of chracter `'a' + i` frequency). A path `(u, v)` is valid when the XOR of its two root-to-node masks has at most 1 bit set.
+
+Using XOR: if `xor[u]` is the mask from root -> `u` and `xor[v]` is root -> `v`, then `xor[u] XOR xor[v]` gives the mask for the path `u -> v`.
+
+
+```c++
+class Solution {
+public:
+    long long countPalindromePaths(vector<int>& parent, string s) {
+        auto adj = buildTree(parent, s);
+        unordered_map<int, int> cnt; // frequency of XOR masks
+        cnt[0] = 1; // base case: empty path has XOR 0
+        long long ans = 0;
+        dfs(0, 0, adj, cnt, ans);
+        return ans;
+    }
+    // -- Module 1 : Tree Builder --
+    // Returns adjacency list : adj[node] = vector of (child, mask) pairs
+    vector<vector<pair<int, int>>> buildTree(const vector<int>& parent, const string& s) {
+        int n = parent.size();
+        vector<vector<pair<int, int>>> adj(n);
+        for (int child = 1; child < n; ++child) {
+            int mask = 1 << (s[child] - 'a');
+            adj[parent[child]].push_back({child, mask});
+        }
+        return adj;
+    }
+    // -- Module 2 : DFS Traversal --
+    void dfs(int node, int xorVal, const vector<vector<pair<int, int>>>& adj, unordered_map<int, int>& cnt, long long& ans) {
+        for (auto& [child, mask] : adj[node]) {
+            int x = xorVal ^ mask; // XOR for child node
+            ans += cnt[x]; // pairs with same XOR (0 bits set)
+            for (int k = 0; k < 26; ++k) {
+                ans += cnt[x ^ (1 << k)]; // pairs with one bit different
+            }
+            cnt[x]++; // add current XOR to frequency map
+            dfs(child, x, adj, cnt, ans); // continue DFS
+        }
+    }
+};
+```
+
