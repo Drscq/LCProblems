@@ -40,107 +40,60 @@ Explanation: An empty string is also valid.
 ## Algorithm:
 
 ### Approach1 : Two Passes
+The naive approach uses two passes: first mark the unmatched ')' (left to right) and then mark the unmatched '(' (right to left) and finally build the result skipping the marked characters.
 
-```python
-class Solution:
-    def minRemoveToMakeValid(self, s: str) -> str:
-        left_to_right_res = []
-        balance = 0
-        for ch in s:
-            if ch == '(':
-                left_to_right_res.append(ch)
-                balance += 1
-            elif ch == ')':
-                if balance:
-                    balance -= 1
-                    left_to_right_res.append(ch)
-            else:
-               left_to_right_res.append(ch)
 
-        right_to_left_res = []
-        balance = 0
-        for ch in reversed(left_to_right_res):
-            if ch == ')':
-                right_to_left_res.append(ch)
-                balance += 1
-            elif ch == '(':
-                if balance:
-                    balance -= 1
-                    right_to_left_res.append(ch)
-            else:
-                right_to_left_res.append(ch)
-        
-        return "".join(reversed(right_to_left_res))
-```
-
-```cpp
+```c++
 class Solution {
 public:
     string minRemoveToMakeValid(string s) {
-        unordered_set<int> indexedToBeRemoved;
-        int count = 0;
-        // Pass 1: Left to Right to mark unmatched ')'
+        if (s.empty()) return s;
+        auto invalid = markUnmatchedClose(s);
+        invalid = markUnmatchedOpen(s, invalid);
+        return buildResult(s, invalid);
+    }
+private:
+    unordered_set<int> markUnmatchedClose(const string& s) {
+        unordered_set<int> invalid;
+        int openCount = 0;
         for (int i = 0; i < s.size(); ++i) {
             if (s[i] == '(') {
-                ++count;
+                ++openCount;
             } else if (s[i] == ')') {
-                if (count > 0) {
-                    --count;
+                if (openCount > 0) {
+                    --openCount;
                 } else {
-                    indexedToBeRemoved.insert(i);
+                    invalid.insert(i);
                 }
             }
         }
-        // Pass 2: Right to Left to remove the leftover unmatched '('
-        for (int i = s.size() - 1; i >= 0 && count > 0; --i) {
-            if (s[i] == '(') {
-                indexedToBeRemoved.insert(i);
-                --count;
-            }
-        }
-        string result;
-        for (int i = 0; i < s.size(); ++i) {
-            if (indexedToBeRemoved.count(i) == 0) {
-                result += s[i];
+        return invalid;
+    }
+    unordered_set<int> markUnmatchedOpen(const string& s, const unordered_set<int>& invalid) {
+        unordered_set<int> result(invalid);
+        int closeCount = 0;
+        for (int i = s.size() - 1; i >= 0; --i) {
+            if (s[i] == ')') {
+                ++closeCount;
+            } else if (s[i] == '(') {
+                if (closeCount > 0) {
+                    --closeCount;
+                } else {
+                    result.insert(i);
+                }
             }
         }
         return result;
     }
-};
-```
-
-### Approach 2 : Single Pass with Stack
-
-```cpp
-class Solution {
-public:
-    string minRemoveToMakeValid(string s) {
-        stack<int> openParenIndices;
-        unordered_set<int> indicesToBeRemoved;
+    string buildResult(const string& s, const unordered_set<int>& invalid) {
+        string res;
+        res.reserve(s.size() - invalid.size());
         for (int i = 0; i < s.size(); ++i) {
-            if (s[i] == '(') {
-                openParenIndices.push(i);
-            } else if (s[i] == ')') {
-                if (!openParenIndices.empty()) {
-                    openParenIndices.pop();
-                } else {
-                    indicesToBeRemoved.insert(i);
-                }
+            if (invalid.count(i) == 0) {
+                res.push_back(s[i]);
             }
         }
-        while (!openParenIndices.empty()) {
-            indicesToBeRemoved.insert(openParenIndices.top());
-            openParenIndices.pop();
-        }
-        string result;
-        for (int i = 0; i < s.size(); ++i) {
-            if (indicesToBeRemoved.count(i) == 0) {
-                result += s[i];
-            }
-        }
-        return result;
+        return res;
     }
 };
 ```
-
-
