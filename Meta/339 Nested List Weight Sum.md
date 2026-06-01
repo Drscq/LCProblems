@@ -89,3 +89,64 @@ private:
 ### Complexity Analysis
 * Time Complexity: O(N), where N is the total number of integers in the nested list
 * Space Complexity: O(D), where D is the maximum depth of the nested list due to the recursion stack.
+
+
+### Approach 2: Breadth-First Search (BFS)
+Alternatively, we can solve this problem using a breadth-first search (BFS) approach. We will use a queue to traverse the nested list level by level. For each integer we encounter, we will multiply it by its depth and add it to our total sum.
+
+```cpp
+/**
+ * // This is the interface that allows for creating nested lists.
+ * // You should not implement it, or speculate about its implementation
+ * class NestedInteger {
+ *   public:
+ *     // Constructor initializes an empty nested list.
+ *     NestedInteger();
+ *
+ *     // Constructor initializes a single integer.
+ *     NestedInteger(int value);
+ *
+ *     // Return true if this NestedInteger holds a single integer, rather than a nested list.
+ *     bool isInteger() const;
+ *
+ *     // Return the single integer that this NestedInteger holds, if it holds a single integer
+ *     // The result is undefined if this NestedInteger holds a nested list
+ *     int getInteger() const;
+ *
+ *     // Set this NestedInteger to hold a single integer.
+ *     void setInteger(int value);
+ *
+ *     // Set this NestedInteger to hold a nested list and adds a nested integer to it.
+ *     void add(const NestedInteger &ni);
+ *
+ *     // Return the nested list that this NestedInteger holds, if it holds a nested list
+ *     // The result is undefined if this NestedInteger holds a single integer
+ *     const vector<NestedInteger> &getList() const;
+ * };
+ */
+ class Solution {
+public:
+    int depthSum(vector<NestedInteger>& nestedList) {
+        int sum = 0;
+        queue<pair<NestedInteger, int>> q;
+        for (const auto& ni : nestedList) {
+            q.push({ni, 1});
+        }
+        while (!q.empty()) {
+            auto [ni, depth] = q.front();
+            q.pop();
+            if (ni.isInteger()) {
+                sum += ni.getInteger() * depth;
+            } else {
+                for (const auto& innerNi : ni.getList()) {
+                    q.push({innerNi, depth + 1});
+                }
+            }
+        }
+        return sum;
+    }
+ };
+ ```
+### Complexity Analysis
+* Time Complexity: O(N), where N is the total number of integers in the nested list
+* Space Complexity: O(N), where N is the total number of integers in the nested list due to the queue storing all elements at the current level.
